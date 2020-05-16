@@ -20,7 +20,7 @@ to create the videos. This part can take up to several days.
 Run the following: 
 
 ```
-cd skp ; python run.py configs/experiments/experiment045.yaml
+cd skp ; python run.py configs/experiments/experiment045.yaml train --gpu 0 --num-workers 4
 ```
 
-You may need to change `data_dir` under `dataset` in the YAML file, as well as modify where model checkpoints are saved. This model was able to obtain a loss of 0.2504 on our local validation set. 
+You may need to change the `--gpu` and `--num-workers` arguments to fit your personal configuration. You may also need to change `data_dir` under `dataset` in the YAML file, as well as modify where model checkpoints are saved. This model was able to obtain a loss of 0.2504 on our local validation set. 
