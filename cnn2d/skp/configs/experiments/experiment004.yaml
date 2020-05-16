@@ -1,0 +1,111 @@
+# NOTE: it is best to use absolute paths
+# If you must use relative paths, they are relative
+# to run.py, not the config file
+
+seed: 88 
+
+dataset:
+  name: 'FaceVideoDataset'
+  params:
+    max_frames: 1
+  sampler:
+    name: 'PartSampler'
+  inner_fold: 'valid'
+  outer_fold: 'valid'
+  data_dir: '../data/dfdc/mini-videos/'
+  csv_filename: '../data/dfdc/train_minivideos_df.csv'
+
+
+transform:
+  augment: 'gentle_transform'
+  probability: 0.8
+  num_workers: 0
+  pad_ratio: 1.0
+  resize_to: [224, 224]
+  preprocess:
+    image_range: [0, 255]
+    input_range: [0, 1]
+    mean: [0.485, 0.456, 0.406]
+    sdev: [0.229, 0.224, 0.225]
+
+
+model:
+  name: 'SingleHead'
+  params:
+    num_classes: 1
+    backbone: 'efficientnet_b4'
+    dropout: 0.2
+    pretrained: 'imagenet'
+
+
+find_lr: # this is its own mode 
+  params:
+    start_lr: 1.0e-7
+    end_lr: 1
+    num_iter: 500
+    save_fig: True
+
+
+train:
+  outer_only: False
+  batch_size: 32
+  trainer: 'Trainer'
+  params:
+    gradient_accumulation: 1
+    num_epochs: 100
+    steps_per_epoch: 0
+    validate_interval: 5
+    verbosity: 100
+
+
+evaluation:
+  batch_size: 2
+  evaluator: 'Evaluator'
+  params:
+    save_checkpoint_dir: '../checkpoints/skp/experiment004/'
+    save_best: True
+    prefix: 'srxt50'
+    metrics: ['log_loss', 'auc', 'accuracy']
+    valid_metric: 'log_loss'
+    mode: 'min'
+    improve_thresh: 1.0e-4
+
+
+loss:
+  name: 'BCEWithLogitsLoss'
+  params:
+
+
+optimizer:
+  name: 'AdamW'
+  params:
+    lr: 4.0e-6
+    weight_decay: 5.0e-4
+
+
+scheduler:
+  name: 'CustomOneCycleLR'
+  params:
+    max_lr:   1.0e-4
+    final_lr: 1.0e-12
+    pct_start: 0.1
+    anneal_strategy: 'linear'
+    cycle_momentum: False
+
+
+test:
+  checkpoint: '.pth'
+  batch_size: 128
+  data_dir:
+  save_preds_dir: 
+  labels_available: 
+  outer_only: True
+
+
+predict:
+  checkpoint: '.pth'
+  batch_size: 128
+  data_dir:
+  save_preds_dir:
+  outer_only: True
+   

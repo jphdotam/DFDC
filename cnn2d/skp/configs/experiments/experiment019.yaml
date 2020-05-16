@@ -1,0 +1,112 @@
+# NOTE: it is best to use absolute paths
+# If you must use relative paths, they are relative
+# to run.py, not the config file
+
+seed: 88 
+
+dataset:
+  name: 'FaceVideoDataset'
+  params:
+    max_frames:  32
+    test_frames: 32
+  sampler:
+    name: 'BalancedSampler'
+  inner_fold: 'valid'
+  outer_fold: 'valid'
+  data_dir: '../data/dfdc/jph/videos/'
+  csv_filename: '../data/dfdc/jph/train_video_with_splits.csv'
+
+
+transform:
+  augment: 'feather_transform'
+  probability: 1.0
+  num_workers: 0
+  pad_ratio: null
+  resize_to: [112, 112]
+  preprocess:
+    image_range: [0, 255]
+    input_range: [0, 255]
+    mean: [95.9966, 100.64, 110.201]
+    sdev: [55.3324, 56.470, 58.1489]
+
+
+model:
+  name: 'R2Plus1D'
+  params:
+    num_classes: 1
+    model: 'r2plus1d_34_32_kinetics'
+    dropout: 0.5
+    pretrained: True
+
+
+find_lr: # this is its own mode 
+  params:
+    start_lr: 1.0e-7
+    end_lr: 1
+    num_iter: 500
+    save_fig: True
+
+
+train:
+  outer_only: False
+  batch_size: 16
+  trainer: 'Trainer'
+  params:
+    gradient_accumulation: 1
+    num_epochs: 20
+    steps_per_epoch: 0
+    validate_interval: 2
+    verbosity: 100
+
+
+evaluation:
+  batch_size: 2
+  evaluator: 'Evaluator'
+  params:
+    save_checkpoint_dir: '../checkpoints/skp/experiment019/'
+    save_best: True
+    prefix: 'csn'
+    metrics: ['log_loss', 'auc', 'accuracy']
+    valid_metric: 'log_loss'
+    mode: 'min'
+    improve_thresh: 1.0e-4
+
+
+loss:
+  name: 'MixupBCELoss'
+  params:
+
+
+optimizer:
+  name: 'AdamW'
+  params:
+    lr: 4.0e-6
+    weight_decay: 5.0e-4
+
+
+scheduler:
+  name: 'CustomOneCycleLR'
+  params:
+    max_lr:   1.0e-4
+    final_lr: 1.0e-12
+    pct_start: 0.1
+    anneal_strategy: 'linear'
+    cycle_momentum: False
+
+
+test:
+  checkpoint: '.pth'
+  batch_size: 128
+  data_dir:
+  save_preds_dir: 
+  labels_available: 
+  outer_only: True
+
+
+predict:
+  checkpoint: '.pth'
+  batch_size: 128
+  data_dir:
+  save_preds_dir:
+  outer_only: True
+   
