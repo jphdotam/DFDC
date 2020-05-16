@@ -4,7 +4,7 @@ from glob import glob
 
 import torch
 import torch.nn as nn
-from torch.optim import Adam
+from torch.optim import AdamW
 from torch.utils.data import DataLoader
 
 import albumentations as A
@@ -49,7 +49,7 @@ dataloader_test = DataLoader(dataset_test, batch_size=BATCH_SIZE, shuffle=True, 
 model = InceptionI3d(157, in_channels=3, output_method='avg_pool')
 model.load_state_dict(torch.load('../../data/external_models/i3d_rgb_charades.pt'))
 model.replace_logits(2)
-model = nn.DataParallel(model)
+#model = nn.DataParallel(model)
 
 model = model.to(DEVICE)
 
@@ -58,7 +58,7 @@ criterion_test = torch.nn.CrossEntropyLoss()
 
 lr = 1e-3
 
-optimizer = Adam((p for p in model.parameters() if p.requires_grad), lr=lr)
+optimizer = AdamW((p for p in model.parameters() if p.requires_grad), lr=lr)
 scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
                                                 max_lr=lr,
                                                 steps_per_epoch=len(dataloader_train),

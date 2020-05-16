@@ -71,9 +71,9 @@ if __name__ == "__main__":
 
     criterion = torch.nn.CrossEntropyLoss()
 
-    lr = 5e-5
+    lr = 1e-3
 
-    optimizer = torch.optim.Adam((p for p in model.parameters() if p.requires_grad), lr=lr)
+    optimizer = torch.optim.AdamW((p for p in model.parameters() if p.requires_grad), lr=lr)
     scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer,
                                                     max_lr=lr / 10,
                                                     steps_per_epoch=len(dataloader_train),
