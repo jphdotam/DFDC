@@ -4,8 +4,7 @@
  
 Dear Kaggle Team,
 
-We hope this code is clear. As we are doctors without formal training our systems are probably a little bit spicy
-(esoteric?) but hopefully they are clear.
+We hope this code is clear. As we are doctors without formal training in programming our systems are probably a little bit idiosyncratic but hopefully they are clear.
 
 We worked on the 2 different pipelines used by our system separately.
 
