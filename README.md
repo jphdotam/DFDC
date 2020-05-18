@@ -27,9 +27,11 @@ We worked on the 2 different pipelines used by our system separately.
 
 2) The 2D CNN pathway (the bottom green pathway on the figure) is trained using the system outlines in the 'cnn2d' folder.
 
-   * Anything Ian wants goes here
-      * And here
+   * Models were trained on a Red Hat Enterprise Linux Server (7.7) which contained 4 NVidia RTX 2080 Ti (11GB) GPUs. Only single-GPU training was performed.
+   * Dependencies can be found and installed using `cnn2d/setup.sh` 
 
 ---
 
-To make predictions on a new test set, we advise using our public notebook, which we have made public, along with all of the attached datasets.
+To make predictions on a new test set, we advise using our public notebook, which we have made public, along with all of the attached datasets:
+
+https://www.kaggle.com/vaillant/dfdc-3d-2d-inc-cutmix-with-3d-model-fix
