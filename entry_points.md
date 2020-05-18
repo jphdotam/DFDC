@@ -61,4 +61,8 @@ I have left the code as it was, so Kaggle can see which models I trained on sing
 
 ## 2D CNN training entrypoints
 
-Ian's stuff
+To prepare the data:
+`cd cnn2d/skp/etl ; python 3_extract_face_rois.py`
+
+To train the 2D model:
+`cd cnn2d/skp ; python run.py configs/experiments/experiment045.yaml train --gpu 0 --num-workers 4`
