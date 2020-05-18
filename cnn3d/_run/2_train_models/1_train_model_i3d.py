@@ -7,9 +7,9 @@ from torch.utils.data import DataLoader
 
 import albumentations as A
 
-from training.i3d import InceptionI3d
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
+from cnn3d.training.i3d import InceptionI3d
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
 
 """This is a fairly standard training script which uses:
 1) A slightly modified version of the InceptionI3d model from https://github.com/piergiaj/pytorch-i3d

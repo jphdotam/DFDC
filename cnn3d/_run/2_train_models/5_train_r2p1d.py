@@ -10,8 +10,8 @@ import albumentations as A
 from albumentations.pytorch import ToTensor
 
 from torchvision.models.video import r2plus1d_18
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
 
 
 """This is a fairly standard training script which uses the MC3_18 torchvision model with the pretrained weights that

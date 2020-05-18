@@ -10,10 +10,10 @@ from torch.utils.data import DataLoader
 import albumentations as A
 from albumentations.pytorch import ToTensor
 
-from training.i3d import InceptionI3d
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
-from training.cutmix import cutmix_apply, MixupBCELoss
+from cnn3d.training.i3d import InceptionI3d
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
+from cnn3d.training.cutmix import cutmix_apply, MixupBCELoss
 
 """
 This script is more or less the same as 1_train_model_i3d.py, except we use cutmix augmentation.

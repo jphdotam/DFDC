@@ -10,8 +10,8 @@ import albumentations as A
 from albumentations.pytorch import ToTensor
 
 from torchvision.models.video import r3d_18, mc3_18, r2plus1d_18
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
 
 """
 In this model we transfer learn, from the saved MC3 model trained on 112*112 images, to 224*224 images. This requires a

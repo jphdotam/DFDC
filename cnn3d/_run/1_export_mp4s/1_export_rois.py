@@ -4,7 +4,7 @@ from glob import glob
 from tqdm import tqdm
 from facenet_pytorch import MTCNN
 
-from export.export_utils import load_video
+from cnn3d.export.export_utils import load_video
 
 """
 NB THIS SCRIPT TAKES A LONG TIME - ALL OF THE ROI PICKLES HAVE THEREFORE BEEN PROVIDED IN THE data/rois FOLDER.

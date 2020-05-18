@@ -5,8 +5,8 @@ import multiprocessing
 
 from tqdm import tqdm
 from glob import glob
-from export.export_utils import get_roi_for_each_face, load_video
-from export.video_utils import resize_and_square_face
+from cnn3d.export.export_utils import get_roi_for_each_face, load_video
+from cnn3d.export.video_utils import resize_and_square_face
 
 """
 20 EXAMPLE VIDEOS EXTRACTED BY THIS ARE AVAILABLE IN the 'data/face_videos_by_part' folder.

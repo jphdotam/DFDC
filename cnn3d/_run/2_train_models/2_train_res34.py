@@ -8,9 +8,9 @@ from torch.utils.data import DataLoader
 import albumentations as A
 from albumentations.pytorch import ToTensor
 
-from training.resnet import resnet34
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
+from cnn3d.training.resnet import resnet34
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
 
 """This is a fairly standard training script which uses:
 1) 3D CNNs and their weights taken from https://github.com/kenshohara/video-classification-3d-cnn-pytorch/

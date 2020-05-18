@@ -11,9 +11,9 @@ from torchvision.models.video import r3d_18, mc3_18, r2plus1d_18
 import albumentations as A
 from albumentations.pytorch import ToTensor
 
-from training.datasets_video import RebalancedVideoDataset
-from training.utils import Am
-from training.cutmix import cutmix_apply, MixupBCELoss
+from cnn3d.training.datasets_video import RebalancedVideoDataset
+from cnn3d.training.utils import Am
+from cnn3d.training.cutmix import cutmix_apply, MixupBCELoss
 
 FACE_MP4_DIR = "/home/james/Data/dfdc/faces2"
 BATCH_SIZE = 36
