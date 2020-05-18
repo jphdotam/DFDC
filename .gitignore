@@ -131,4 +131,5 @@ cnn3d/.idea/
 cnn3d/data/saved_models/*
 cnn3d/data/external_models/*
 cnn2d/*.PTH
+.idea
 DFDC.zip
