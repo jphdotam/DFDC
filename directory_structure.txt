@@ -81,9 +81,6 @@
 ./cnn2d/skp/factory/models/mmaction/configs/TSN
 ./cnn2d/skp/factory/models/mmaction/configs/TSN/ucf101
 ./cnn2d/skp/factory/models/mmaction/configs/SlowOnly
-./cnn2d/skp/factory/models/mmaction/.eggs
-./cnn2d/skp/factory/models/mmaction/.eggs/pytest_runner-5.2-py3.7.egg
-./cnn2d/skp/factory/models/mmaction/.eggs/pytest_runner-5.2-py3.7.egg/EGG-INFO
 ./cnn2d/skp/factory/models/mmaction/data
 ./cnn2d/skp/factory/models/ig65m
 ./cnn2d/skp/factory/models/ig65m/cli
