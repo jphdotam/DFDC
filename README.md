@@ -28,7 +28,7 @@ We worked on the 2 different pipelines used by our system separately.
 2) The 2D CNN pathway (the bottom green pathway on the figure) is trained using the system outlines in the 'cnn2d' folder.
 
    * Models were trained on a Red Hat Enterprise Linux Server (7.7) which contained 4 NVidia RTX 2080 Ti (11GB) GPUs. Only single-GPU training was performed.
-   * Dependencies can be found and installed using `cnn2d/setup.sh` 
+   * Dependencies can be found and installed using `cnn2d/skp/setup.sh` 
 
 ---
 
