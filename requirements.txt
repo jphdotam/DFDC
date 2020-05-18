@@ -2,6 +2,7 @@
 # $ conda create --name <env> --file <this file>
 # platform: win-64
 albumentations=0.4.3
+decord=0.3.9
 facenet-pytorch=2.0.1
 libopencv=4.2.0
 matplotlib=3.1.2
