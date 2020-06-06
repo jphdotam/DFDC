@@ -1,8 +1,6 @@
 # DFDC
 
 ![DFDC Pipeline](https://james.dev/img/approach_large.PNG)
- 
-Dear Kaggle Team,
 
 We hope this code is clear. As we are doctors without formal training in programming our systems are probably a little bit idiosyncratic but hopefully they are clear.
 
