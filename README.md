@@ -1,4 +1,6 @@
-# DFDC
+# DFDC - Our solution for Kaggle's Deep Fake Detection Challenge
+
+This is my and [Ian Pan's](https://github.com/i-pan) solution.
 
 ![DFDC Pipeline](https://james.dev/img/approach_large.PNG)
 
