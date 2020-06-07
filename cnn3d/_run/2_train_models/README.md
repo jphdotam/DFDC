@@ -21,10 +21,10 @@ Somewhat confusingly, these networks use different normalisation parameters. The
 inference notebook.
 
 This is because
-1) The I3D model we transfer learned from used its own normalisation method (I call i3d_norm) which is simply:
+* The I3D model we transfer learned from used its own normalisation method (I call i3d_norm) which is simply:
     x = (x / 255.) * 2 - 1
-2) The models from the torchvision repository (MC3, R2+1D) use ImageNet normalisation.
-3) The Resnet3D-34 model only seemed to train with non-normalized data.
+* The models from the torchvision repository (MC3, R2+1D) use ImageNet normalisation.
+* The Resnet3D-34 model only seemed to train with non-normalized data.
 
 All videos are trained from a RebalancedVideoDataset which is defined in /training/datasets_video and which ensures
 equal balance of real and fake videos are used for training. It randomly subsampled the fake videos which are more
