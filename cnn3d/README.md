@@ -12,4 +12,4 @@ cropped to individual people's faces, tracking a bounding box temporally through
 
 2) Train models - self-explanatory. There is 1 python file for each of the 7 models we used in the final submission.
 
-The final models, as well as being attached to the submission notebook, are also available in /data/saved_models
+The final models are attached to the submission notebook on Kaggle [here](https://www.kaggle.com/vaillant/dfdc-3d-2d-inc-cutmix-with-3d-model-fix) from where they can be downloaded.
